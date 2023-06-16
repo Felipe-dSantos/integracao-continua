@@ -13,9 +13,13 @@ jobs:
         with:
           node-version: 18
       - name: Instalação do cliente Railway
-        run: npm install --omit=dev -g @railway/cli
+        run: npm install -g --omit=dev @railway/cli
+      - name: Build Angular app
+        working-directory: sgcmapp/
+        run: ng build --configuration=production
       - name: Deploy
         working-directory: sgcmapp/
         run: railway up --detach --service sgcmapp
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
