@@ -26,6 +26,9 @@ jobs:
       - name: Install Dependencies
         working-directory: sgcmapp/
         run: npm ci
+      - name: compilacao
+        working-directory: sgcmapp/
+        run: ng build
   test:
     needs: compile
     runs-on: ubuntu-latest
@@ -35,9 +38,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
+      - name: Install Dependencies
+        working-directory: sgcmapp/
+        run: npm ci
       - name: Run Tests
         working-directory: sgcmapp/
-        run: ng test --no-watch --no-progress
+        run: ng test --no-watch --no-progress --browsers=ChromeHeadless
   merge:
     needs: test
     runs-on: ubuntu-latest
