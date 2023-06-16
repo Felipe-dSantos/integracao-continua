@@ -4,6 +4,8 @@ on:
     branches:
       - '**'
       - '!main'
+    paths:
+      - 'sgcmapi/**'
   pull_request:
     paths:
       - 'sgcmapi/**'
