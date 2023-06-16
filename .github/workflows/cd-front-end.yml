@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 18
       - name: Instalação do cliente Railway
-        run: npm install -g --omit=dev @railway/cli
+        run: npm install -g @railway/cli
       - name: Deploy
         working-directory: sgcmapp/
         run: railway up --detach --service sgcmapp
