@@ -26,4 +26,3 @@ jobs:
         run: railway up --detach --service sgcmapp
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-
