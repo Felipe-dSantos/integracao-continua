@@ -14,10 +14,10 @@ jobs:
           node-version: 18
       - name: Instalação do cliente Railway
         run: npm install -g @railway/cli 
-      - name: Install npm
-        run: npm install
       - name: Install Angular
         run: npm i -g @angular/cli@15
+      - name: Install Dependencies
+        working-directory: sgcmapp/
       - name: compilacao
         working-directory: sgcmapp/
         run: ng build
