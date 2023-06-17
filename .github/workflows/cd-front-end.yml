@@ -14,6 +14,8 @@ jobs:
           node-version: 18
       - name: Instalação do cliente Railway
         run: npm install -g @railway/cli 
+      - name: Install Npm 
+        run: npm install
       - name: Install Angular
         run: npm i -g @angular/cli@15
       - name: Install Dependencies
